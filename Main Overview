@@ -1,0 +1,51 @@
+The Main method is the point of entry of an executable program; it is where the program control starts and ends.
+
+Main is declared inside a class or strut. Main must be static and it need not be public. The enclosing class or struct is not required to be static.
+
+Main can be declared with or without a string[] parameter that contains command-line arguments. 
+
+
+Main can either have a void, int, Task, or Task<int> return type.
+If and only if Main returns a Task or Task<int>, the declaration of Main may include the async modifier. 
+This specifically excludes an async void Main method.
+
+The following list shows valid Main signatures:
+
+public static void Main() { }
+public static int Main() { }
+public static void Main(string[] args) { }
+public static int Main(string[] args) { }
+public static async Task Main() { }
+public static async Task<int> Main() { }
+public static async Task Main(string[] args) { }
+public static async Task<int> Main(string[] args) { }
+
+
+The Examples above all use the public accesor modifier. That's typical, but not required.
+
+The addition of async and Task, Task<int> return types simplifies program code when console applications need to start and await asynchronus operations in Main.
+/////////////////////
+
+
+
+//////////////////////////////////////////////////////////       Main() return values      //////////////////////////////
+
+You can return an int from the Main method by defining the method in one of the following ways:
+
+Main method code	            Main signature
+
+No use of args or await	            static int Main()
+
+Uses args, no use of await	        static int Main(string[] args)
+No use of args, uses await	        static async Task<int> Main()
+Uses args and await	                static async Task<int> Main(string[] args)
+
+Now if the return value from Main is not used, returning void or Task allows for slighty simplier code.
+
+Main method code	Main signature
+No use of args or await	static void Main()
+Uses args, no use of await	static void Main(string[] args)
+No use of args, uses await	static async Task Main()
+Uses args and await	static async Task Main(string[] args)
+
+

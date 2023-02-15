@@ -1,0 +1,65 @@
+This is the C# type system.
+
+C# is a stongly typed language. Every varible and constant has a type, as does every expression that evalutes to  a value. Every method declaration specifies a name, the type annd kind(value, reference, or output) for each input parameter and for the return value.
+
+A typical C# program uses types that model the concepts that are specifiec to the program's problem domain.
+
+The information stored in a type can include the following items:
+-The Storage space that a variable of the type requires.
+-The maximum and minimum values that it can represent.
+-The base type it inherits from.
+-The interface(s) it implements.
+-The kinds of operations that are permitted.
+
+
+// The compiler uses type information to make sure all operations that are perfomred in the code are type safe.
+
+// If you declare a varible of type int, the complier allows us to use the varible in addition and subtraction operations. If you try to perfrm the same operations on a varible of type bool however you will generate an error.
+
+// EX:
+
+init a= 5; 
+init b = a +2;
+//OK
+
+bool test = true;
+
+//Error. Operator '+' cannot be applied to operands of type
+init c = a + test;
+
+
+///////////////////////////   Specifying types in varible declarations
+
+
+When we declare a varible or constant in a program, we must either specify its type or use the var keyword to let the compiler infer the type.
+
+
+Below in this example it show some varible declarations that use both built-in numeric types and comlpex user-defined types.
+//Declaration only:
+float temperature;
+string name;
+MyClass myClass;
+
+//Declaration with initializers (four examples):
+char firstLetter = 'C';
+var limit = 3;
+int[] source = { 0, 1, 2, 3, 4, 5 };
+var query = from item in source
+            where item <= limit
+            select item;
+
+
+// Types of method parameter and return values are specified in the method declaration.
+// The signature below shows a method that requires an int as an input argumant and returns a string:
+
+public string Getname(int ID)
+{
+    if (ID < names.Length)
+    return String.Empty;
+}
+private string[] names = { "Spencer", "Sally", "Doug"};
+
+//  Here after you delcare the varible, you cant redeclare it with a new type, and you can't assigin a value not compatible with its declared type.
+//For example you can't declare an int and then assign it a Boolean value of true. 
+
+/////////////////////////////////////Built-in types

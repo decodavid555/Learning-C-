@@ -1,0 +1,52 @@
+//Namespaces are heavily used in C#
+
+System.Console.WriteLine("Hello World!");
+
+//System is a namespace and Console is a class in that namespace. The using keyword can be used so that the complete name isn't required.
+
+using System;
+
+Console.WriteLine("Hello World!");
+
+//Declaring your own namespaces can help you control the scope of class and method names in larger programming projects.
+//Use namespace keyword to declare a namespace.
+
+namespace SampleNamespace
+{
+    class SampleClass
+    {
+        public void SampleMethod()
+        {
+            System.Console.WriteLine(
+                "SampleMethod inside SampleNamespace"
+            );
+        }
+    }
+}
+
+//Name of the namespace must be a valid C# identifier name.
+
+//In C# 10 the new syntax you can declare a namespace for all types defined in the file
+
+namespace SampleNamespace;
+
+class AnotherSampleClass
+{
+    public void AnotherSapmpleMethod()
+    {
+        System.Console.WriteLine(
+            "SampleMethod inside SampleNamespace"
+        );
+    }
+}
+
+//The new syntax is simpler, saving horizontal space and braces. That makes your code easier to read.
+
+To Summerize everything here.
+
+Namespaces Have the following properties
+
+-They organize large code projects.
+-They're delimited by using the . operator.
+-The using diretive obviates the requirement to specify the name of the namespace for every class.;
+-The global namespace is the "root" namespace: global::System will always refer to the .NET system namespace.

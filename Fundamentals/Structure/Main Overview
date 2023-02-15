@@ -1,3 +1,25 @@
+This is the entry point of any C# application. When the application is started, the Main method is the first method that is invoked.
+
+class TestClass{
+    static void Main(string[] args)
+    {
+        //Display the number of command line arguments.
+        Console.WriteLine(args.Length);
+    }
+}
+
+
+Starting in C# 9, you can omit the Main method, and write C# statements as if they were in the Main method
+
+using System.Text; 
+StringBuilder builder =new();
+builder.AppendLine("Hello");
+builder.AppendLine("World");
+
+Console.WriteLine(builder.ToString());
+
+
+
 The Main method is the point of entry of an executable program; it is where the program control starts and ends.
 
 Main is declared inside a class or strut. Main must be static and it need not be public. The enclosing class or struct is not required to be static.
@@ -49,3 +71,4 @@ No use of args, uses await	static async Task Main()
 Uses args and await	static async Task Main(string[] args)
 
 
+Create a new application by running dotnet new console. Modify the Main method 
